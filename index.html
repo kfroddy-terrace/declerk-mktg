@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeClerk Property Services | Professional Landscape Maintenance</title>
+  <meta name="description" content="DeClerk Property Services provides professional commercial and residential lawn and landscape maintenance, planting, irrigation, fire mitigation, and snow removal." />
+  <style>
+    :root {
+      --green: #2f6b3f;
+      --dark: #1f2933;
+      --light: #f7f9f8;
+      --accent: #6aa84f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      color: var(--dark);
+      background: white;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1563368689-5b4a3f3c1c4b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .5rem;
+      letter-spacing: .5px;
+    }
+    header p {
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      font-size: 1.1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: .75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn:hover { opacity: .9; }
+
+    section {
+      padding: 3.5rem 1.5rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: var(--green);
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    .card h3 { margin-top: 0; color: var(--green); }
+
+    .about {
+      background: #f2f6f3;
+    }
+
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: .95rem;
+    }
+    footer p { margin: .25rem 0; }
+
+    .contact-box {
+      background: var(--green);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .contact-box h2 { color: white; }
+
+    @media (max-width: 600px) {
+      header { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav style="background:#ffffff;border-bottom:1px solid #e5e7eb;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 0;">
+      <strong style="color:var(--green);font-size:1.1rem;">DeClerk Property Services</strong>
+      <div style="display:flex;gap:1.25rem;font-weight:600;">
+        <a href="#home" style="text-decoration:none;color:var(--dark);">Home</a>
+        <a href="#about" style="text-decoration:none;color:var(--dark);">About</a>
+        <a href="#services" style="text-decoration:none;color:var(--dark);">Services</a>
+        <a href="#contact" style="text-decoration:none;color:var(--dark);">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home">
+    <h1>DeClerk Property Services</h1>
+    <p>Professional landscape maintenance for commercial and residential properties. Over 10 years of reliable, high-quality service.</p>
+    <p style="margin-top:.5rem;font-weight:600;">
+      Owner-Operated • Insured • 10+ Years Experience<br>
+      Serving Bend & Central Oregon
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+      <a href="#contact" class="btn">Request a Quote</a>
+      <a href="tel:15413500457" class="btn" style="background:#ffffff;color:#2f6b3f;">Call or Text 541-350-0457</a>
+    </div>
+  </header>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        At DeClerk Property Services, this is more than just yard work — it’s about taking care of people and the places they call home. As a locally owned and operated business here in Central Oregon, we understand the unique climate, seasonal challenges, and pride that comes with maintaining property in this area.
+      </p>
+      <p>
+        Our focus is simple: provide dependable, honest service and treat every property as if it were our own. Whether it’s routine lawn maintenance, irrigation service, or fire mitigation, we show up on time, communicate clearly, and do the job right.
+      </p>
+      <p>
+        Many of our clients have trusted us with their properties for years. We value those relationships and work hard to earn that trust through consistency, attention to detail, and genuine care. When you hire DeClerk Property Services, you’re working with someone who takes pride in their work and stands behind it.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2>Landscape & Lawn Care Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Lawn Maintenance</h3>
+          <ul>
+            <li>Mowing (weekly & bi-weekly)</li>
+            <li>Fertilizing & weed control</li>
+            <li>Aerating & de-thatching</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Seasonal Cleanups</h3>
+          <ul>
+            <li>Spring cleanups</li>
+            <li>Mid-season yard cleanups</li>
+            <li>Fall cleanups</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Planting Services</h3>
+          <ul>
+            <li>Trees, shrubs & flowers</li>
+            <li>Landscape upgrades</li>
+            <li>Sod installation & re-seeding</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Trimming & Pruning</h3>
+          <ul>
+            <li>Bush & hedge trimming</li>
+            <li>Tree pruning</li>
+            <li>Perennial trimming</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Irrigation Services</h3>
+          <ul>
+            <li>Spring irrigation start-ups</li>
+            <li>System repairs & troubleshooting</li>
+            <li>Blowouts & winterizations</li>
+            <li>Timer programming & efficiency adjustments</li>
+            <li>Full system inspections</li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Additional Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Fire Mitigation</h3>
+          <ul>
+            <li>Defensible space clearing</li>
+            <li>Brush, debris & ladder fuel removal</li>
+            <li>Vegetation thinning & cleanup</li>
+            <li>Property safety improvements</li>
+            <li>Seasonal fire risk reduction</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Winter Services</h3>
+          <p>Reliable snow removal for residential and commercial properties.</p>
+        </div>
+        <div class="card">
+          <h3>Hardscape Materials</h3>
+          <ul>
+            <li>Bark mulch installation</li>
+            <li>Rock & gravel installation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box" id="contact">
+        <h2>Get a Free Estimate</h2>
+        <p>Contact DeClerk Property Services to discuss your landscaping needs and schedule service.</p>
+        <p><strong>Phone:</strong> (XXX) XXX-XXXX</p>
+        <p><strong>Email:</strong> rob@dps.com</p>
+        <p><strong>Service Area:</strong> Bend, Redmond, Sisters, and surrounding Central Oregon communities</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> DeClerk Property Services</p>
+    <p>Professional Landscape Maintenance</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
