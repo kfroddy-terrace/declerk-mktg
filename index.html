@@ -5,153 +5,365 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DeClerk Property Services | Professional Landscape Maintenance</title>
   <meta name="description" content="DeClerk Property Services provides professional commercial and residential lawn and landscape maintenance, planting, irrigation, fire mitigation, and snow removal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --green: #2f6b3f;
-      --dark: #1f2933;
-      --light: #f7f9f8;
-      --accent: #6aa84f;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      color: var(--dark);
-      background: white;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1563368689-5b4a3f3c1c4b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      color: white;
-      padding: 4rem 1.5rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: .5rem;
-      letter-spacing: .5px;
-    }
-    header p {
-      max-width: 720px;
-      margin: 0 auto 1.5rem;
-      font-size: 1.1rem;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: .75rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .btn:hover { opacity: .9; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    section {
-      padding: 3.5rem 1.5rem;
+    :root {
+      --green-50:  #F0FDF4;
+      --green-100: #DCFCE7;
+      --green-600: #16A34A;
+      --green-700: #15803D;
+      --green-800: #166534;
+      --amber-50:  #FFFBEB;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-600: #57534e;
+      --stone-900: #1c1917;
     }
-    .container {
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--stone-900);
+      background: #fff;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--stone-200);
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
       max-width: 1100px;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
     }
-    h2 {
-      color: var(--green);
-      font-size: 1.9rem;
-      margin-bottom: 1rem;
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    .nav-brand img { height: 34px; width: auto; }
+    .nav-brand-name {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--stone-900);
     }
-    .card {
-      background: var(--light);
-      padding: 1.5rem;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--stone-600);
+      text-decoration: none;
+      font-size: .875rem;
+      font-weight: 500;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--green-700); }
+
+    /* ── HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, var(--green-50) 0%, var(--amber-50) 55%, var(--green-100) 100%);
+      padding: 4rem 1.5rem 4.5rem;
+      text-align: center;
+    }
+    .header-logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .header-logo img { height: 72px; width: auto; }
+    .page-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--stone-900);
+      letter-spacing: -.3px;
+      margin-bottom: .75rem;
+    }
+    .page-header .sub {
+      font-size: 1.05rem;
+      color: var(--stone-600);
+      max-width: 600px;
+      margin: 0 auto .75rem;
+    }
+    .page-header .badges {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--green-700);
+      margin-bottom: 1.75rem;
+      line-height: 1.8;
+    }
+    .header-btns {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--green-600);
+      color: #fff;
+      padding: .75rem 1.65rem;
       border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .925rem;
+      transition: background .15s, transform .1s;
     }
-    .card h3 { margin-top: 0; color: var(--green); }
+    .btn-primary:hover { background: var(--green-700); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid var(--green-600);
+      color: var(--green-700);
+      padding: .73rem 1.65rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .925rem;
+      background: #fff;
+      transition: background .15s, color .15s;
+    }
+    .btn-outline:hover { background: var(--green-600); color: #fff; }
 
-    .about {
-      background: #f2f6f3;
+    /* ── SHARED ── */
+    .section { padding: 4rem 1.5rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    h2.section-heading {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--green-700);
+      margin-bottom: 1rem;
+      letter-spacing: -.15px;
     }
 
+    /* ── ABOUT ── */
+    .about { background: var(--stone-100); }
+    .about p {
+      color: var(--stone-600);
+      font-size: .975rem;
+      margin-bottom: 1rem;
+      max-width: 780px;
+    }
+    .about p:last-child { margin-bottom: 0; }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid var(--stone-200);
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 6px 20px rgba(22,163,74,.1);
+      transform: translateY(-2px);
+    }
+    .service-icon { font-size: 1.6rem; display: block; margin-bottom: .6rem; }
+    .service-card h3 {
+      font-size: .975rem;
+      font-weight: 700;
+      color: var(--stone-900);
+      margin-bottom: .55rem;
+    }
+    .service-card ul { list-style: none; padding: 0; }
+    .service-card li {
+      font-size: .85rem;
+      color: var(--stone-600);
+      padding: .22rem 0;
+      border-bottom: 1px solid var(--green-50);
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+    }
+    .service-card li:last-child { border-bottom: none; }
+    .service-card li::before {
+      content: '✓';
+      color: var(--green-600);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+    }
+    .service-card p {
+      font-size: .85rem;
+      color: var(--stone-600);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--stone-100); }
+    .contact-box {
+      background: var(--green-700);
+      color: #fff;
+      padding: 2.5rem;
+      border-radius: 16px;
+      max-width: 780px;
+    }
+    .contact-box h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: .75rem;
+      letter-spacing: -.15px;
+    }
+    .contact-box p {
+      font-size: .975rem;
+      margin-bottom: .6rem;
+      color: rgba(255,255,255,.9);
+    }
+    .contact-box p:first-of-type { margin-bottom: 1rem; }
+    .contact-box strong { color: #fff; }
+
+    /* ── FOOTER ── */
     footer {
       background: #111827;
       color: #e5e7eb;
       padding: 2rem 1.5rem;
       text-align: center;
-      font-size: .95rem;
+      font-size: .9rem;
     }
     footer p { margin: .25rem 0; }
 
-    .contact-box {
-      background: var(--green);
-      color: white;
-      padding: 2rem;
-      border-radius: 12px;
-    }
-    .contact-box h2 { color: white; }
+    /* ── MOBILE NAV CTA ── */
+    .nav-mobile-cta { display: none; }
 
-    @media (max-width: 600px) {
-      header { padding: 3rem 1.25rem; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+
+      /* Nav: hide brand text and links, show a call button instead */
+      .nav-brand-name { display: none; }
+      .nav-links { display: none; }
+      .nav-mobile-cta {
+        display: inline-block;
+        background: var(--green-600);
+        color: #fff;
+        padding: .5rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: .82rem;
+        font-weight: 700;
+      }
+
+      /* Header: tighter padding, bigger logo breathing room */
+      .page-header { padding: 2.5rem 1.25rem 3rem; }
+      .header-logo img { height: 60px; }
+      .page-header h1 { font-size: 1.6rem; }
+      .page-header .sub { font-size: .95rem; }
+      .page-header .badges { font-size: .85rem; }
+
+      /* Buttons: full-width stacked, tall enough to tap easily */
+      .header-btns { flex-direction: column; }
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+      }
+
+      /* Sections: less whitespace on small screens */
+      .section { padding: 2.5rem 1.25rem; }
+
+      /* Service cards: single column, slightly larger text */
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card li { font-size: .9rem; padding: .3rem 0; }
+
+      /* Contact box: breathable but compact */
+      .contact-box { padding: 1.75rem 1.25rem; border-radius: 12px; }
+      .contact-box h2 { font-size: 1.35rem; }
+      .contact-box p { font-size: .925rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav style="background:#ffffff;border-bottom:1px solid #e5e7eb;">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 0;">
-      <strong style="color:var(--green);font-size:1.1rem;">DeClerk Property Services</strong>
-      <div style="display:flex;gap:1.25rem;font-weight:600;">
-        <a href="#home" style="text-decoration:none;color:var(--dark);">Home</a>
-        <a href="#about" style="text-decoration:none;color:var(--dark);">About</a>
-        <a href="#services" style="text-decoration:none;color:var(--dark);">Services</a>
-        <a href="#contact" style="text-decoration:none;color:var(--dark);">Contact</a>
-      </div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="nav-brand">
+        <span class="nav-brand-name">DeClerk Property Services</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-mobile-cta">Get a Quote</a>
     </div>
   </nav>
 
-  <header id="home">
+  <!-- HEADER -->
+  <div id="home" class="page-header">
     <h1>DeClerk Property Services</h1>
-    <p>Professional landscape maintenance for commercial and residential properties. Over 10 years of reliable, high-quality service.</p>
-    <p style="margin-top:.5rem;font-weight:600;">
-      Owner-Operated • Insured • 10+ Years Experience<br>
-      Serving Bend & Central Oregon
+    <p class="sub">Professional landscape maintenance for commercial and residential properties. Over 10 years of reliable, high-quality service.</p>
+    <p class="badges">
+      Owner-Operated &bull; Insured &bull; 10+ Years Experience<br>
+      Serving Bend &amp; Central Oregon
     </p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
-      <a href="#contact" class="btn">Request a Quote</a>
-      <a href="tel:15413500457" class="btn" style="background:#ffffff;color:#2f6b3f;">Call or Text 541-350-0457</a>
+    <div class="header-btns">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="tel:15413500457" class="btn-outline">Call or Text 541-350-0457</a>
     </div>
-  </header>
+  </div>
 
-  <section class="about" id="about">
+  <!-- ABOUT -->
+  <section id="about" class="section about">
     <div class="container">
-      <h2>About Us</h2>
+      <h2 class="section-heading">About Us</h2>
       <p>
-        At DeClerk Property Services, this is more than just yard work — it’s about taking care of people and the places they call home. As a locally owned and operated business here in Central Oregon, we understand the unique climate, seasonal challenges, and pride that comes with maintaining property in this area.
+        At DeClerk Property Services, this is more than just yard work — it's about taking care of people and the places they call home. As a locally owned and operated business here in Central Oregon, we understand the unique climate, seasonal challenges, and pride that comes with maintaining property in this area.
       </p>
       <p>
-        Our focus is simple: provide dependable, honest service and treat every property as if it were our own. Whether it’s routine lawn maintenance, irrigation service, or fire mitigation, we show up on time, communicate clearly, and do the job right.
+        Our focus is simple: provide dependable, honest service and treat every property as if it were our own. Whether it's routine lawn maintenance, irrigation service, or fire mitigation, we show up on time, communicate clearly, and do the job right.
       </p>
       <p>
-        Many of our clients have trusted us with their properties for years. We value those relationships and work hard to earn that trust through consistency, attention to detail, and genuine care. When you hire DeClerk Property Services, you’re working with someone who takes pride in their work and stands behind it.
+        Many of our clients have trusted us with their properties for years. We value those relationships and work hard to earn that trust through consistency, attention to detail, and genuine care. When you hire DeClerk Property Services, you're working with someone who takes pride in their work and stands behind it.
       </p>
     </div>
   </section>
 
-  <section id="services">
+  <!-- LANDSCAPE & LAWN CARE SERVICES -->
+  <section id="services" class="section">
     <div class="container">
-      <h2>Landscape & Lawn Care Services</h2>
-      <div class="grid">
-        <div class="card">
+      <h2 class="section-heading">Landscape &amp; Lawn Care Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="service-icon">🌿</span>
           <h3>Lawn Maintenance</h3>
           <ul>
-            <li>Mowing (weekly & bi-weekly)</li>
-            <li>Fertilizing & weed control</li>
-            <li>Aerating & de-thatching</li>
+            <li>Mowing (weekly &amp; bi-weekly)</li>
+            <li>Fertilizing &amp; weed control</li>
+            <li>Aerating &amp; de-thatching</li>
           </ul>
         </div>
-        <div class="card">
+
+        <div class="service-card">
+          <span class="service-icon">🍂</span>
           <h3>Seasonal Cleanups</h3>
           <ul>
             <li>Spring cleanups</li>
@@ -159,78 +371,94 @@
             <li>Fall cleanups</li>
           </ul>
         </div>
-        <div class="card">
+
+        <div class="service-card">
+          <span class="service-icon">🌱</span>
           <h3>Planting Services</h3>
           <ul>
-            <li>Trees, shrubs & flowers</li>
+            <li>Trees, shrubs &amp; flowers</li>
             <li>Landscape upgrades</li>
-            <li>Sod installation & re-seeding</li>
+            <li>Sod installation &amp; re-seeding</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Trimming & Pruning</h3>
+
+        <div class="service-card">
+          <span class="service-icon">✂️</span>
+          <h3>Trimming &amp; Pruning</h3>
           <ul>
-            <li>Bush & hedge trimming</li>
+            <li>Bush &amp; hedge trimming</li>
             <li>Tree pruning</li>
             <li>Perennial trimming</li>
           </ul>
         </div>
-        <div class="card">
+
+        <div class="service-card">
+          <span class="service-icon">💧</span>
           <h3>Irrigation Services</h3>
           <ul>
             <li>Spring irrigation start-ups</li>
-            <li>System repairs & troubleshooting</li>
-            <li>Blowouts & winterizations</li>
-            <li>Timer programming & efficiency adjustments</li>
+            <li>System repairs &amp; troubleshooting</li>
+            <li>Blowouts &amp; winterizations</li>
+            <li>Timer programming &amp; efficiency adjustments</li>
             <li>Full system inspections</li>
           </ul>
         </div>
-        
+
       </div>
     </div>
   </section>
 
-  <section>
+  <!-- ADDITIONAL SERVICES -->
+  <section class="section" style="background: var(--stone-100);">
     <div class="container">
-      <h2>Additional Services</h2>
-      <div class="grid">
-        <div class="card">
+      <h2 class="section-heading">Additional Services</h2>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <span class="service-icon">🔥</span>
           <h3>Fire Mitigation</h3>
           <ul>
             <li>Defensible space clearing</li>
-            <li>Brush, debris & ladder fuel removal</li>
-            <li>Vegetation thinning & cleanup</li>
+            <li>Brush, debris &amp; ladder fuel removal</li>
+            <li>Vegetation thinning &amp; cleanup</li>
             <li>Property safety improvements</li>
             <li>Seasonal fire risk reduction</li>
           </ul>
         </div>
-        <div class="card">
+
+        <div class="service-card">
+          <span class="service-icon">❄️</span>
           <h3>Winter Services</h3>
           <p>Reliable snow removal for residential and commercial properties.</p>
         </div>
-        <div class="card">
+
+        <div class="service-card">
+          <span class="service-icon">🪨</span>
           <h3>Hardscape Materials</h3>
           <ul>
             <li>Bark mulch installation</li>
-            <li>Rock & gravel installation</li>
+            <li>Rock &amp; gravel installation</li>
           </ul>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
     <div class="container">
-      <div class="contact-box" id="contact">
+      <div class="contact-box">
         <h2>Get a Free Estimate</h2>
         <p>Contact DeClerk Property Services to discuss your landscaping needs and schedule service.</p>
-        <p><strong>Phone:</strong> (XXX) XXX-XXXX</p>
-        <p><strong>Email:</strong> rob@dps.com</p>
+        <p><strong>Phone:</strong> (541) 350-0457</p>
+        <p><strong>Email:</strong> robertdeclerk@gmail.com</p>
         <p><strong>Service Area:</strong> Bend, Redmond, Sisters, and surrounding Central Oregon communities</p>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; <span id="year"></span> DeClerk Property Services</p>
     <p>Professional Landscape Maintenance</p>
@@ -239,5 +467,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
